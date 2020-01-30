@@ -1,4 +1,4 @@
-# When done, submit this entire file to the autograder.
+# author: Arif, UIN: 128001831
 
 # Part 1
 
@@ -62,4 +62,13 @@ end
 
 class BookInStock
 # YOUR CODE HERE
+  attr_accessor :isbn, :price
+  def initialize(isbn, price)
+    raise ArgumentError if isbn.empty? || price <= 0
+    @isbn, @price = isbn, price
+  end
+  
+  def price_as_string
+    sprintf("$%2.2f", @price)
+  end 
 end
